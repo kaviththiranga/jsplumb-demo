@@ -17,9 +17,11 @@ body {
     overflow-y: scroll;
 }
 
-.draggable {
+.draggableIcon {
+    z-index: 400;
+}
+.draggable{
     position: absolute;
-    margin: 5px;
 }
 .component {
     border:1px solid #346789;
@@ -73,7 +75,8 @@ body {
     opacity:0.9;
     filter:alpha(opacity=90);
 }
-#jsPlumbContainer{
-    width: 400px;
-    height: 200px;
+.list-group-item:hover{
+    background: gray;
+    color: #ffffff;
+    cursor: move;
 }

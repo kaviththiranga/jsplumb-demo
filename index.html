@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>JsPlumb Demo for ESB Editor</title>
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-2 col-lg-2 col-md-2">
-            <div class="panel-group" id="accordion" style="max-height: 500px;">
+            <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -24,77 +24,69 @@
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse scrollable-collapse">
+                    <div id="collapseOne" class="panel-collapse collapse scrollable-collapse in">
                         <div class="panel-body">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                  <img src="icons/call-mediator.gif" class=""> Call
+                                  <img src="icons/call-mediator.gif" id="callMediator" class="draggableIcon"> Call
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/callTemplate-mediator.gif"> Call Template
+                                    <img src="icons/callTemplate-mediator.gif" id="callTemplateMediator" class="draggableIcon"> Call Template
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/drop-mediator.gif"  class=""> Drop
+                                    <img src="icons/drop-mediator.gif"  id="dropMediator" class="draggableIcon"> Drop
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/log-mediator.gif"> Log
+                                    <img src="icons/log-mediator.gif" id="logMediator" class="draggableIcon"> Log
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/loopBack-mediator.gif"> LoopBack
+                                    <img src="icons/loopBack-mediator.gif" id="loopBackMediator" class="draggableIcon"> LoopBack
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/property-mediator.gif"> Property
+                                    <img src="icons/property-mediator.gif" id="propertyMediator" class="draggableIcon"> Property
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/respond-mediator.gif"> Respond
+                                    <img src="icons/respond-mediator.gif" id="respondMediator" class="draggableIcon"> Respond
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/send-mediator.gif"> Send
+                                    <img src="icons/send-mediator.gif" id="sendMediator" class="draggableIcon"> Send
                                 </li>
                             </ul>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <img src="icons/conditionalRouter-mediator.gif"> Conditional Router
+                                    <img src="icons/conditionalRouter-mediator.gif" id="ConditionalRouterMediator" class="draggableIcon"> Conditional Router
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/filter-mediator.gif"> Filter
+                                    <img src="icons/filter-mediator.gif" id="FilterMediator" class="draggableIcon"> Filter
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/switch-mediator.gif"> Switch
+                                    <img src="icons/switch-mediator.gif" id="SwitchMediator" class="draggableIcon"> Switch
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/validate-mediator.gif"> Validate
+                                    <img src="icons/validate-mediator.gif" id="ValidateMediator" class="draggableIcon"> Validate
                                 </li>
                              </ul>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <img src="icons/address-endpoint.gif"> Address Endpoint
+                                    <img src="icons/bean-mediator.gif" id="BeanMediator" class="draggableIcon"> Bean
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/defalut-endpoint.gif"> Default Endpoint
+                                    <img src="icons/class-mediator.gif" id="ClassMediator" class="draggableIcon"> Class
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/failover-endpoint.gif"> Failover Endpoint
+                                    <img src="icons/command-mediator.gif" id="CommandMediator" class="draggableIcon"> Command
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/http-endpoint.gif"> Http Endpoint
+                                    <img src="icons/ejb-mediator.gif" id="EJBMediator" class="draggableIcon"> EJB
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/loadbalance-endpoint.gif"> LoadBalance Endpoint
+                                    <img src="icons/script-mediator.gif" id="ScriptMediator" class="draggableIcon"> Script
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/named-endpoint.gif"> Named Endpoint
-                                </li>
-                                <li class="list-group-item">
-                                    <img src="icons/recipientlist-endpoint.gif"> RecipientList Endpoint
-                                </li>
-                                <li class="list-group-item">
-                                    <img src="icons/template-endpoint.gif"> Template Endpoint
-                                </li>
-                                <li class="list-group-item">
-                                    <img src="icons/wsdl-endpoint.gif"> WSDL Endpoint
+                                    <img src="icons/spring-mediator.gif" id="SpringMediator" class="draggableIcon"> Spring
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -110,22 +102,49 @@
                         <div class="panel-body">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <img src="icons/bean-mediator.gif"> Bean
+                                    <img src="icons/address-endpoint.gif" id="AddressEndpoint" class="draggableIcon"> Address Endpoint
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/class-mediator.gif"> Class
+                                    <img src="icons/defalut-endpoint.gif" id="DefaultEndpoint" class="draggableIcon"> Default Endpoint
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/command-mediator.gif"> Command
+                                    <img src="icons/failover-endpoint.gif" id="FailoverEndpoint" class="draggableIcon"> Failover Endpoint
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/ejb-mediator.gif"> EJB
+                                    <img src="icons/http-endpoint.gif" id="HttpEndpoint" class="draggableIcon"> Http Endpoint
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/script-mediator.gif"> Script
+                                    <img src="icons/loadbalance-endpoint.gif" id="LoadBalanceEndpoint" class="draggableIcon"> LoadBalance Endpoint
                                 </li>
                                 <li class="list-group-item">
-                                    <img src="icons/spring-mediator.gif"> Spring
+                                    <img src="icons/named-endpoint.gif" id="NamedEndpoint" class="draggableIcon"> Named Endpoint
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="icons/recipientlist-endpoint.gif" id="RecipientListEndpoint" class="draggableIcon"> RecipientList Endpoint
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="icons/template-endpoint.gif" id="TemplateEndpoint" class="draggableIcon"> Template Endpoint
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="icons/wsdl-endpoint.gif" id="WSDLEndpoint" class="draggableIcon"> WSDL Endpoint
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                Links
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse scrollable-collapse">
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <img src="icons/address-endpoint.gif" id="AddressEndpoint2" class="draggableIcon"> Address Endpoint
                                 </li>
                             </ul>
                         </div>
@@ -134,12 +153,14 @@
              </div>
         </div>
         <div class="col-xs-10 col-lg-10 col-md-10">
-            <div id="jsPlumbContainer" style="position: relative">
-                <div class="component window draggable" id="item1"></div>
-                <div class="component window draggable" id="item2"></div>
-                <div class="component window draggable" id="item3"></div>
+
+            <div class="well-lg" id="jsPlumbContainerWrapper" style="height: 800px;background: #ffffff;">
+                <div id="jsPlumbContainer" style="position: relative;width: 100%;height: 100%;">
+
+                </div>
+
             </div>
-            <canvas id="siddhiCanvas" height="700" width="1577"
+            <canvas id="plumbCanvas" height="700" width="100%"
                     style="cursor: default;"> Your browser does not support HTML5. Please upgrade your browser to any modern version. </canvas>
 
         </div>
